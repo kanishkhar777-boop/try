@@ -1,0 +1,347 @@
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Link - Connect with Local Tour Guides</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">Tourist Link</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#register" class="nav-link">Register as Guide</a></li>
+                    <li><a href="#browse" class="nav-link">Book a Guide</a></li>
+                    <li><a href="#cart" class="nav-link">Cart</a></li>
+                    <li><a href="#booking" class="nav-link">My Bookings</a></li>
+                    <li><a href="#profile" class="nav-link">My Profile</a></li>
+                </ul>
+                <div class="header-actions">
+                    <div class="profile-menu">
+                        <div class="profile-circle" onclick="toggleProfileMenu()">
+                            <img src="profile.png" alt="Profile">
+                        </div>
+                        <div class="profile-dropdown" id="profileDropdown">
+                            <ul>
+                                <li><a href="#" onclick="editProfile()">User</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                <li><button onclick="logout()">Logout</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Welcome to Tourist Link</h1>
+                <h2>Discover Your Destination with Expert Local Guides</h2>
+                <p>Connect with experienced tour guides who know the hidden gems and local culture of your destination. Our verified guides offer personalized tours, cultural insights, and unforgettable experiences across the globe.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <h3>Verified Guides</h3>
+                        <p>All our guides are certified professionals with official authentication IDs.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Local Expertise</h3>
+                        <p>Experience authentic local culture through insider knowledge and hidden gems.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Flexible Booking</h3>
+                        <p>Book tours that fit your schedule with transparent pricing in rupees.</p>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="showSection('browse')">Book Your Guide Now</button>
+            </div>
+
+            <div class="about-section">
+                <div class="container">
+                    <h2>About</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Tourist Link is India's premier platform connecting travelers with authentic local tour guides. Founded in 2023, we believe that the best way to experience a destination is through the eyes of a local expert.</p>
+                            <p>Our mission is to make travel more meaningful, authentic, and sustainable by supporting local communities and their tourism professionals. Every guide on our platform is verified with official authentication IDs to ensure quality and safety.</p>
+                            <p>Whether you're exploring ancient temples in India, bustling markets in Southeast Asia, or historic sites in Europe, our guides will help you create memories that last a lifetime.</p>
+                        </div>
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>10+</h3>
+                                <p>Verified Guides</p>
+                            </div>
+                            <div class="stat">
+                                <h3>1</h3>
+                                <p>Cities Covered</p>
+                            </div>
+                            <div class="stat">
+                                <h3>5+</h3>
+                                <p>Happy Travelers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinations-section">
+                <div class="container">
+                    <h2>Popular Destinations</h2>
+                    <div class="destinations-grid">
+                        <div class="destination-card">
+                            <h3>Delhi, India</h3>
+                            <p>Explore India's capital with guides who know every alley of Old Delhi and modern landmarks.</p>
+                        </div>
+                        <div class="destination-card">
+                            <h3>Agra, India</h3>
+                            <p>Experience the Taj Mahal and Mughal history with expert local guides.</p>
+                        </div>
+                        <div class="destination-card">
+                            <h3>Jaipur, India</h3>
+                            <p>Discover the Pink City with guides passionate about Rajasthani culture.</p>
+                        </div>
+                        <div class="destination-card">
+                            <h3>Mumbai, India</h3>
+                            <p>Navigate India's financial capital with local experts who know the real Mumbai.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="section">
+            <div class="container">
+                <h2>Register as a Tour Guide</h2>
+                <form id="guideForm" class="form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <div class="phone-input">
+                            <select id="countryCode" required>
+                                <option value="+91">+91 (India)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+81">+81 (Japan)</option>
+                                <option value="+86">+86 (China)</option>
+                                <option value="+49">+49 (Germany)</option>
+                                <option value="+33">+33 (France)</option>
+                                <option value="+39">+39 (Italy)</option>
+                                <option value="+7">+7 (Russia)</option>
+                                <option value="+55">+55 (Brazil)</option>
+                                <option value="+61">+61 (Australia)</option>
+                                <option value="+27">+27 (South Africa)</option>
+                                <option value="+20">+20 (Egypt)</option>
+                                <option value="+34">+34 (Spain)</option>
+                                <option value="+82">+82 (South Korea)</option>
+                                <option value="+65">+65 (Singapore)</option>
+                                <option value="+60">+60 (Malaysia)</option>
+                                <option value="+66">+66 (Thailand)</option>
+                                <option value="+84">+84 (Vietnam)</option>
+                                <option value="+62">+62 (Indonesia)</option>
+                                <option value="+63">+63 (Philippines)</option>
+                                <option value="+971">+971 (UAE)</option>
+                                <option value="+966">+966 (Saudi Arabia)</option>
+                                <option value="+90">+90 (Turkey)</option>
+                                <option value="+31">+31 (Netherlands)</option>
+                                <option value="+46">+46 (Sweden)</option>
+                                <option value="+47">+47 (Norway)</option>
+                                <option value="+45">+45 (Denmark)</option>
+                                <option value="+41">+41 (Switzerland)</option>
+                                <option value="+43">+43 (Austria)</option>
+                                <option value="+32">+32 (Belgium)</option>
+                                <option value="+48">+48 (Poland)</option>
+                                <option value="+420">+420 (Czech Republic)</option>
+                                <option value="+36">+36 (Hungary)</option>
+                                <option value="+30">+30 (Greece)</option>
+                                <option value="+351">+351 (Portugal)</option>
+                                <option value="+52">+52 (Mexico)</option>
+                                <option value="+54">+54 (Argentina)</option>
+                                <option value="+56">+56 (Chile)</option>
+                                <option value="+57">+57 (Colombia)</option>
+                                <option value="+58">+58 (Venezuela)</option>
+                                <option value="+51">+51 (Peru)</option>
+                                <option value="+53">+53 (Cuba)</option>
+                                <option value="+1-242">+1-242 (Bahamas)</option>
+                                <option value="+1-246">+1-246 (Barbados)</option>
+                                <option value="+1-441">+1-441 (Bermuda)</option>
+                                <option value="+1-345">+1-345 (Cayman Islands)</option>
+                                <option value="+1-809">+1-809 (Dominican Republic)</option>
+                                <option value="+1-876">+1-876 (Jamaica)</option>
+                                <option value="+1-758">+1-758 (Saint Lucia)</option>
+                                <option value="+1-868">+1-868 (Trinidad and Tobago)</option>
+                                <option value="+64">+64 (New Zealand)</option>
+                                <option value="+852">+852 (Hong Kong)</option>
+                                <option value="+853">+853 (Macau)</option>
+                                <option value="+886">+886 (Taiwan)</option>
+                                <option value="+95">+95 (Myanmar)</option>
+                                <option value="+92">+92 (Pakistan)</option>
+                                <option value="+94">+94 (Sri Lanka)</option>
+                                <option value="+880">+880 (Bangladesh)</option>
+                                <option value="+977">+977 (Nepal)</option>
+                                <option value="+975">+975 (Bhutan)</option>
+                                <option value="+975">+975 (Maldives)</option>
+                            </select>
+                            <input type="tel" id="phone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="languages">Languages Spoken</label>
+                        <input type="text" id="languages" placeholder="e.g., English, Spanish, French" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialties">Specialties</label>
+                        <textarea id="specialties" placeholder="e.g., Historical tours, Food tours, Adventure tours" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rate">Hourly Rate (₹)</label>
+                        <input type="number" id="rate" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authId">Guide Authentication Document</label>
+                        <input type="file" id="authId" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <small>Upload your official guide authentication document (PDF, JPG, PNG)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" placeholder="Tell tourists about yourself and your passion for guiding" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Register</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="browse" class="section">
+            <div class="container">
+                <h2>Book a Guide</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="locationFilter">Location</label>
+                        <input type="text" id="locationFilter" placeholder="Enter location">
+                    </div>
+                    <div class="filter-group">
+                        <label for="budgetFilter">Max Budget (₹/hour)</label>
+                        <input type="number" id="budgetFilter" min="0" step="0.01" placeholder="Enter max budget">
+                    </div>
+                    <button class="btn-secondary" onclick="applyFilters()">Apply Filters</button>
+                </div>
+                <div id="guidesList" class="guides-grid">
+                    <!-- Guides will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="section">
+            <div class="container">
+                <h2>My Cart</h2>
+                <div id="cartItems">
+                    <!-- Cart items will be populated here -->
+                </div>
+                <div class="cart-total" id="cartTotal">
+                    <!-- Total will be shown here -->
+                </div>
+                <button class="btn-primary" onclick="proceedToPayment()" id="checkoutBtn" style="display: none;">Proceed to Payment</button>
+            </div>
+        </section>
+
+        <section id="payment" class="section">
+            <div class="container">
+                <h2>Payment</h2>
+                <div class="payment-form">
+                    <div class="cart-summary" id="paymentSummary">
+                        <!-- Cart summary will be shown here -->
+                    </div>
+                    <form id="paymentForm" class="form">
+                        <div class="form-group">
+                            <label for="upiId">UPI ID</label>
+                            <input type="text" id="upiId" placeholder="yourname@upi" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <img src="upi_logo_icon_169316.png" alt="UPI" style="border-radius: 5px; width: 100px; height: 50px;">
+                                <span>Pay securely with UPI</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="couponCode">Coupon Code (Optional)</label>
+                            <input type="text" id="couponCode" placeholder="Enter coupon code">
+                            <button type="button" class="btn-secondary" onclick="applyCoupon()">Apply</button>
+                        </div>
+                        <div class="payment-total" id="paymentTotal">
+                            <!-- Final total will be shown here -->
+                        </div>
+                        <button type="submit" class="btn-primary">Complete Payment</button>
+                    </form>
+                </div>
+                <div id="bill" class="bill-section">
+                    <!-- Bill will be shown here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="section">
+            <div class="container">
+                <h2>My Bookings</h2>
+                <div id="bookingsList">
+                    <!-- Bookings will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="section">
+            <div class="container">
+                <h2>My Profile</h2>
+                <form id="profileForm" class="form">
+                    <div class="form-group">
+                        <label for="profileName">Full Name</label>
+                        <input type="text" id="profileName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePhone">Phone Number</label>
+                        <input type="tel" id="profilePhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail">Email Address</label>
+                        <input type="email" id="profileEmail" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Update Profile</button>
+                    <button type="button" class="btn-secondary" onclick="showSection('home')">Cancel</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about" onclick="showSection('home')">About</a>
+                <a href="#support">Support</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <p>&copy; 2023 Tourist Link. Connecting travelers with local experts.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
